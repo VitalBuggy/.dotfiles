@@ -1,0 +1,27 @@
+body {
+	font-size: 13px;
+    background-color: #282a36 !important;
+    color: #d0d0d0 !important;
+}
+#main-header {
+    background-color: #282a36 !important;
+    margin: 0;
+}
+
+#et-navigation > ul > li > a {
+    color: #c3e88d !important;
+}
+
+.widget_text .textwidget {
+    background-color: #434758 !important;
+
+}
+
+h4.widgettitle  {
+    color: #d0d0d0 !important;
+    background-color: #434758 !important;
+}
+
+.textwidget p {
+    color: #d0d0d0 !important;
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Home</title>
+    <link rel="stylesheet" href="../styles/homepage.css" />
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="search">
+      <input id="search-field" type="text" name="search-field" />
+    </div>
+    <div class="container">
+      <div id="clock"></div>
+      <div class="weather-container">
+        <div class="row">
+          <div id="weather-description" class="inline"></div>
+          <div class="inline">-</div>
+          <div id="temp" class="inline"></div>
+        </div>
+      </div>
+      <div class="bookmark-container">
+        <div class="bookmark-set">
+          <div class="bookmark-title">Social & Video</div>
+          <div class="bookmark-inner-container">
+            <a class="bookmark" href="https://youtube.com/" target="_blank"
+              >Youtube</a
+            >
+            <a class="bookmark" href="https://twitch.tv/" target="_blank"
+              >Twitch</a
+            >
+            <a class="bookmark" href="https://netflix.com" target="_blank"
+              >Netflix</a
+            >
+            <a class="bookmark" href="https://reddit.com" target="_blank"
+              >Reddit</a
+            >
+            <a class="bookmark" href="https://4chan.org/" target="_blank"
+              >4chan</a
+            >
+            <a class="bookmark" href="https://gmail.com/" target="_blank"
+              >Gmail</a
+            >
+          </div>
+        </div>
+        <div class="bookmark-set">
+          <div class="bookmark-title">Code</div>
+          <div class="bookmark-inner-container">
+            <a
+              class="bookmark"
+              href="http://moocfi.github.io/courses/2013/programming-part-1/material.html"
+              target="_blank"
+              >Java</a
+            >
+            <a
+              class="bookmark"
+              href="http://moocfi.github.io/courses/2013/programming-part-2/material.html"
+              target="_blank"
+              >Java 2</a
+            >
+            <a
+              class="bookmark"
+              href="http://www.cplusplus.com/doc/"
+              target="_blank"
+              >C++ Docs</a
+            >
+            <a
+              class="bookmark"
+              href="https://course.elementsofai.com/"
+              target="_blank"
+              >Elements of AI</a
+            >
+            <a
+              class="bookmark"
+              href="https://developer.android.com/courses/fundamentals-training/toc-v2"
+              target="_blank"
+              >Android</a
+            >
+            <a
+              class="bookmark"
+              href="https://developer.android.com/courses/advanced-training/toc"
+              target="_blank"
+              >Android 2</a
+            >
+            <a
+              class="bookmark"
+              href="https://laravel.com/docs/7.x"
+              target="_blank"
+              >Laravel</a
+            >
+            <a
+              class="bookmark"
+              href="https://www.arduino.cc/reference/en/"
+              target="_blank"
+              >Arduino Reference</a
+            >
+          </div>
+        </div>
+        <div class="bookmark-set">
+          <div class="bookmark-title">Competetive Programming</div>
+          <div class="bookmark-inner-container">
+            <a
+              class="bookmark"
+              href="https://www.codewars.com/dashboard"
+              target="_blank"
+              >CodeWars</a
+            >
+            <a
+              class="bookmark"
+              href="https://edabit.com/challenges"
+              target="_blank"
+              >EdaBit</a
+            >
+            <a
+              class="bookmark"
+              href="https://www.hackthebox.eu/"
+              target="_blank"
+              >Hack The Box</a
+            >
+            <a class="bookmark" href="https://leetcode.com/" target="_blank"
+              >LeetCode</a
+            >
+          </div>
+        </div>
+        <div class="bookmark-set">
+          <div class="bookmark-title">Linux</div>
+          <div class="bookmark-inner-container">
+            <a
+              class="bookmark"
+              href="https://wiki.archlinux.org/"
+              target="_blank"
+              >Arch Wiki</a
+            >
+            <a
+              class="bookmark"
+              href="https://wiki.gentoo.org/wiki/Main_Page"
+              target="_blank"
+              >Gentoo Wiki</a
+            >
+            <a class="bookmark" href="https://linuxjourney.com" target="_blank"
+              >Linux Journey</a
+            >
+          </div>
+        </div>
+        <div class="bookmark-set">
+          <div class="bookmark-title">Reddit</div>
+          <div class="bookmark-inner-container">
+            <a
+              class="bookmark"
+              href="https://reddit.com/r/unixporn"
+              target="_blank"
+              >/r/unixporn</a
+            >
+            <a
+              class="bookmark"
+              href="https://reddit.com/r/dankmemes"
+              target="_blank"
+              >/r/dankmemes</a
+            >
+            <a
+              class="bookmark"
+              href="https://www.reddit.com/r/ProgrammerHumor"
+              target="_blank"
+              >/r/ProgrammerHumor</a
+            >
+            <a
+              class="bookmark"
+              href="https://www.reddit.com/r/linuxmemes"
+              target="_blank"
+              >/r/linuxmemes</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="browsers">
+        <a href="https://start.duckduckgo.com/">
+          <img src="https://img.icons8.com/nolan/48/duckduckgo.png" />
+        </a>
+        <a href="https://google.com/">
+          <img src="https://img.icons8.com/nolan/48/chrome.png" />
+        </a>
+        <a href="https://bing.com/">
+          <img src="https://img.icons8.com/color/48/000000/bing.png" />
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Search on enter key event
+      document
+        .getElementById("search-field")
+        .addEventListener("keydown", (event) => {
+          if (event.keyCode === 13) {
+            var val = document.getElementById("search-field").value;
+            window.open("https://google.com/search?q=" + val);
+          }
+        });
+
+      document.body.style.overflow = "hidden";
+      // Get current time and format
+      getTime = () => {
+        let date = new Date(),
+          min = date.getMinutes(),
+          sec = date.getSeconds(),
+          hour = date.getHours();
+
+        return (
+          "" +
+          (hour < 10 ? "0" + hour : hour) +
+          ":" +
+          (min < 10 ? "0" + min : min) +
+          ":" +
+          (sec < 10 ? "0" + sec : sec)
+        );
+      };
+
+      window.onload = () => {
+        let xhr = new XMLHttpRequest();
+        // Request to open weather map
+        xhr.open(
+          "GET",
+          "http://api.openweathermap.org/data/2.5/weather?id=524901&units=metric&appid=801363391dc8d90282fb6bc6f24b37de"
+        );
+
+        xhr.onload = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              let json = JSON.parse(xhr.responseText);
+              console.log(json);
+              document.getElementById("temp").innerHTML =
+                json.main.temp.toFixed(0) + " C";
+              document.getElementById("weather-description").innerHTML =
+                json.weather[0].description;
+            } else {
+              console.log("error msg: " + xhr.status);
+            }
+          }
+        };
+        xhr.send();
+        // Set up the clock
+        document.getElementById("clock").innerHTML = getTime();
+        // Set clock interval to tick clock
+        setInterval(() => {
+          document.getElementById("clock").innerHTML = getTime();
+        }, 100);
+      };
+
+      document.addEventListener("keydown", (event) => {
+        if (event.keyCode == 32) {
+          // Spacebar code to open search
+          document.getElementById("search").style.display = "flex";
+          document.getElementById("search-field").focus();
+        } else if (event.keyCode == 27) {
+          // Esc to close search
+          document.getElementById("search-field").value = "";
+          document.getElementById("search-field").blur();
+          document.getElementById("search").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
