@@ -1,0 +1,43 @@
+{
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
+    "rome-lsp": {
+      "command": "rome",
+      "args": ["lsp"],
+      "filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "json"
+      ],
+      "rootPatterns": [".config"],
+      "requireRootPattern": true
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "html",
+    "js",
+    "jsx",
+    "py",
+    "pyc",
+    "json"
+  ],
+  "tsserver.enable": true,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "py": ["pyc"]
+  },
+  "snippets.autoTrigger": true
+}
