@@ -124,9 +124,7 @@ alias conda_init="source ~/.local/bin/conda_init"
 alias n="nvim"
 alias sudo='sudo -p "Enter your password dipshit: " '
 
-alias e="sudo emerge -a --jobs"
-alias eu="equery uses"
-alias fl="sudo flaggie"
+alias cbonsai='cbonsai -l'
 
 alias cmatrix="cmatrix -a -C blue"
 
@@ -151,13 +149,8 @@ export info='user os kern wm term sh cpu mem pkgs col'
 
 #nfetch
 
-case $(( $RANDOM % 8 )) in
-    0) ~/.local/bin/banner;;
-    1) ~/.local/bin/skulls;;
-    2) neofetch;;
-    3) pfetch;;
-    4) fortune | cowsay;;
-    5) fortune | cowsay | lolcat;;
-    6) pfetch | lolcat;;
-    7) fet.sh;;
+
+case $(( $RANDOM % 2 )) in
+    0) pfetch;;
+    1) uwufetch;;
 esac
